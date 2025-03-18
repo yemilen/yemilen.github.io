@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio of Milen G Kebede | PhD Researcher in Privacy & Data Protection</title>
+    <meta name="description" content="Personal portfolio of Milen G Kebede, PhD candidate at University of Amsterdam researching privacy, data protection, GDPR compliance, and regulatory technologies.">
+    <meta name="keywords" content="Milen G Kebede, PhD, University of Amsterdam, privacy research, GDPR, data protection, regulatory technology, eFLINT, ODRL">
+    <meta name="author" content="Milen G Kebede">
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Milen G Kebede | Privacy Researcher">
+    <meta property="og:description" content="Personal portfolio of Milen G Kebede, PhD candidate at University of Amsterdam">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yemilen.github.io/">
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="no-referrer-when-downgrade">
+    <!-- Link to our CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yemilen.github.io/">
+    <script>
+        // Handle image load error and add protection
+        window.onload = function() {
+            var img = document.getElementById('profile-photo');
+            var container = document.querySelector('.photo-container');
+            var placeholder = document.querySelector('.profile-placeholder');
+            
+            img.onerror = function() {
+                container.style.display = 'none';
+                placeholder.style.display = 'flex';
+            }
+            
+            // If image is loaded successfully
+            img.onload = function() {
+                placeholder.style.display = 'none';
+            }
+            
+            // Prevent image download attempts
+            document.addEventListener('keydown', function(e) {
+                // Disable keyboard shortcuts that might save the image
+                if (e.ctrlKey && (e.key === 's' || e.key === 'S' || e.key === 'p' || e.key === 'P')) {
+                    e.preventDefault();
+                }
+            });
+            
+            // Disable right click on the entire page
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+            
+            // Additional protection for images
+            document.querySelectorAll('img').forEach(function(img) {
+                // Prevent drag
+                img.addEventListener('dragstart', function(e) {
+                    e.preventDefault();
+                });
+                
+                // Prevent mouse actions
+                img.addEventListener('mousedown', function(e) {
+                    e.preventDefault();
+                });
+            });
+            
+        }
+    </script>
+</head>
+<body>
+    <!-- Simple navigation menu -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#teaching">Teaching</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Milen G Kebede</h1>
+    </header>
+    <section id="about" class="bio">
+        <div class="bio-container">
+            <div class="profile-image">
+                <!-- Real photo will replace this placeholder -->
+                <div class="photo-container">
+                    <img id="profile-photo" src="images/profile-photo.jpg" alt="Milen G Kebede" class="profile-photo" oncontextmenu="return false;" draggable="false">
+                </div>
+                
+                <!-- Fallback if image doesn't load -->
+                <div class="profile-placeholder">
+                    <span>MK</span>
+                </div>
+            </div>
+            <div class="bio-content">
+                <h2>About Me</h2>
+                <p>Hi! I am a computer science PhD candidate at University of Amsterdam. My supervisors are <a href="https://www.uva.nl/en/profile/e/n/t.m.vanengers/t.m.vanengers.html" target="_blank" rel="noopener noreferrer" class="bio-link">Prof. Tom van Engers</a> and <a href="https://www.uva.nl/en/profile/b/i/l.t.vanbinsbergen/l.t.van-binsbergen.html" target="_blank" rel="noopener noreferrer" class="bio-link">Prof. L. Thomas van Binsbergen</a> from the <a href="https://cci-research.nl/" target="_blank" rel="noopener noreferrer" class="bio-link">CCI group</a> at the University of Amsterdam and <a href="https://research.prinsesmaximacentrum.nl/en/team-members/dr-dannis-van-vuurden" target="_blank" rel="noopener noreferrer" class="bio-link">Dr. Dannis van Vuurden</a> from Princess Máxima Pediatric Oncology Center.</p>
+                <p>I hold a double MSc in computer science from Saarland University and University of Trento where I studied Security and Privacy and minored in Innovation and Entrepreneurship. This was possible through the <a href="https://www.eitdigital.eu/" target="_blank" rel="noopener noreferrer" class="bio-link">EIT Digital</a> who also granted me a scholarship for my studies. This was an exciting time where we had winter and summer schools and worked in developing different business ideas. I also studied technologies for active and health aging at the University of Trento for a year.</p>
+                <p>After that, I worked as a security analyst at XTN Cognitive Security. I also hold a Bachelor's degree in Computer Science from Jimma University.</p>
+            </div>
+        </div>
+    </section>
+    <section id="research" class="research">
+        <h2>Research Interest</h2>
+        <p>My research focuses on formalising and automating data access under the GDPR and data sharing agreement. I explored policy specification languages such as ODRL and eFLINT to ensures that real-world data sharing agreement align with legal norms and user consent requirements. This involved analysing the expressiveness and limitations of existing languages, bridging social and system level policies and deriving purpose based access control models for GDPR compliant enforcement. In collaboration with healthcare institutions, I have modeled the SIOPE DIPG/DMG data sharing agreement using eFLINT to enabled fined grained access control over clinical data. The approach ensures regulatory compliance throughout data lifecycle by automating manual tasks and minimising human error.</p>
+        <h2 id="publications">Publications</h2>
+        <ul class="publications-list">
+            <li class="publication-item">
+                <span class="publication-year">2025</span>
+                <span class="publication-title">The EPI framework: A data privacy by design framework to support healthcare use cases</span>
+                <span class="publication-authors">Kassem, J. A., Müller, T., Esterhuyse, C. A., Kebede, M. G., Osseyran, A., & Grosso, P.</span>
+                <span class="publication-journal">Future Generation Computer Systems, 165, 107550</span>
+                <a href="https://doi.org/10.1016/j.future.2024.107550" class="publication-doi" target="_blank" rel="noopener noreferrer">DOI: 10.1016/j.future.2024.107550</a>
+            </li>
+            
+            <li class="publication-item">
+                <span class="publication-year">2024</span>
+                <span class="publication-title">Lawful and Accountable Personal Data Processing with GDPR-based Access and Usage Control in Distributed Systems</span>
+                <span class="publication-authors">Van Binsbergen, L. T., Steketee, M. C., Kebede, M. G., Janssen, H. L., & van Engers, T. M.</span>
+                <span class="publication-journal">Submitted to Artificial Intelligence and Law journal</span>
+                <a href="https://arxiv.org/abs/2503.07172" class="publication-doi" target="_blank" rel="noopener noreferrer">arXiv: 2503.07172</a>
+            </li>
+            
+            <li class="publication-item">
+                <span class="publication-year">2024</span>
+                <span class="publication-title">Building a Digital Health Twin for Personalized Intervention: The EPI Project</span>
+                <span class="publication-authors">Alsayed Kassem, J., Allaart, C., Amiri, S., Kebede, M., Müller, T., Turner, R., ... & Klous, S.</span>
+                <span class="publication-journal">In Commit2Data (2024) (pp. 2-1). Schloss Dagstuhl–Leibniz-Zentrum für Informatik</span>
+                <a href="https://doi.org/10.4230/OASIcs.Commit2Data.2" class="publication-doi" target="_blank" rel="noopener noreferrer">DOI: 10.4230/OASIcs.Commit2Data.2</a>
+            </li>
+            
+            <li class="publication-item">
+                <span class="publication-year">2023</span>
+                <span class="publication-title">Towards a Purpose-Based Access Control Model Derived from the Purpose Limitation Principle</span>
+                <span class="publication-authors">Kebede, M. G., van Binsbergen, T., van Engers, T., & van Vuurden, D. G.</span>
+                <span class="publication-journal">In Legal Knowledge and Information Systems (pp. 143-148). IOS Press</span>
+                <a href="https://doi.org/10.3233/FAIA230958" class="publication-doi" target="_blank" rel="noopener noreferrer">DOI: 10.3233/FAIA230958</a>
+            </li>
+            
+            <li class="publication-item">
+                <span class="publication-year">2022</span>
+                <span class="publication-title">Dynamic generation of access control policies from social policies</span>
+                <span class="publication-authors">van Binsbergen, L. T., Kebede, M. G., Baugh, J., Van Engers, T., & van Vuurden, D. G.</span>
+                <span class="publication-journal">Procedia Computer Science, 198, 140-147</span>
+                <a href="https://doi.org/10.1016/j.procs.2021.12.221" class="publication-doi" target="_blank" rel="noopener noreferrer">DOI: 10.1016/j.procs.2021.12.221</a>
+            </li>
+            
+            <li class="publication-item">
+                <span class="publication-year">2018</span>
+                <span class="publication-title">Automating normative control for healthcare research</span>
+                <span class="publication-authors">Kebede, M. G.</span>
+                <span class="publication-journal">International Workshop on AI Approaches to the Complexity of Legal Systems. Cham: Springer International Publishing</span>
+                <a href="https://doi.org/10.1007/978-3-030-89811-3_5" class="publication-doi" target="_blank" rel="noopener noreferrer">DOI: 10.1007/978-3-030-89811-3_5</a>
+            </li>
+            
+            <li class="publication-item">
+                <span class="publication-year">2018</span>
+                <span class="publication-title">A critical reflection on ODRL</span>
+                <span class="publication-authors">Kebede, M. G., Sileno, G., & Van Engers, T.</span>
+                <span class="publication-journal">International Workshop on AI Approaches to the Complexity of Legal Systems (pp. 48-61). Cham: Springer International Publishing</span>
+                <a href="https://doi.org/10.1007/978-3-030-89811-3_4" class="publication-doi" target="_blank" rel="noopener noreferrer">DOI: 10.1007/978-3-030-89811-3_4</a>
+            </li>
+        </ul>
+        <h2 id="teaching">Teaching</h2>
+        <p class="teaching-intro">Teaching Assistant at the University of Amsterdam, Information Studies Master Program (Information Systems Track):</p>
+        <div class="course-list">
+            <div class="course-item"><span class="bullet">•</span> Policy Making & Rule Governance</div>
+            <div class="course-item"><span class="bullet">•</span> Intelligent Systems</div>
+            <div class="course-item"><span class="bullet">•</span> Information Organisation</div>
+            <div class="course-item"><span class="bullet">•</span> Modelling System Dynamics</div>
+            <div class="course-item"><span class="bullet">•</span> Societal Complexity and Designing with Data</div>
+        </div>
+        
+        <h3 class="subsection-title">Student Supervision</h3>
+        
+        <div class="simple-supervision">
+            <div class="supervision-group">
+                <p class="supervision-heading">Previously Supervised:</p>
+                <div class="supervision-items">
+                    <div class="supervision-item">Van Beek, SF - <a href="https://dspace.uba.uva.nl/server/api/core/bitstreams/5fb92db5-7204-4f5b-85f9-7ef7a59b0a13/content" target="_blank" rel="noopener noreferrer">Representing access control systems Using semantic web</a></div>
+                    <div class="supervision-item">Ilias Daia - <a href="https://staff.fnwi.uva.nl/a.s.z.belloum/MSctheses/MScthesis_Ilias_Daia.pdf" target="_blank" rel="noopener noreferrer">Analysis privacy policy languages and compliance to GDPR</a></div>
+                    <div class="supervision-item">Abdul V. Zor - <a href="https://dspace.uba.uva.nl/server/api/core/bitstreams/1d6ac7aa-7ad0-417a-80b1-b137ee95f23d/content" target="_blank" rel="noopener noreferrer">A generic consent management platform using eFLINT</a></div>
+                </div>
+            </div>
+            
+            <div class="supervision-group">
+                <p class="supervision-heading">Currently Supervising:</p>
+                <div class="supervision-items">
+                    <div class="supervision-item">Christos Psaradellis - An ontology based framework to support AI Act</div>
+                    <div class="supervision-item">Niels Musters - Access control models in managing insider threat</div>
+                    <div class="supervision-item">Sobbia Mohammad - Security by design in Software development</div>
+                    <div class="supervision-item">Viktoriya Li - Analyzing user awareness in web tracking and cookies</div>
+                    <div class="supervision-item">Maceo Linger - A business value perspective on digital twins</div>
+                </div>
+            </div>
+        </div>
+        <h2>Other Interests</h2>
+        <p>I love movies, cooking and running.</p>
+    </section>
+
+    <footer id="contact">
+        <p><strong>Contact:</strong> 
+            <script type="text/javascript">
+                document.write('&#109;&#46;&#103;&#46;&#107;&#101;&#98;&#101;&#100;&#101;');
+                document.write('&#64;');
+                document.write('&#117;&#118;&#97;&#46;&#110;&#108;');
+            </script> | &copy; 2025
+        </p>
+    </footer>
+</body>
+</html>

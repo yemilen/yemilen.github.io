@@ -1,0 +1,686 @@
+/* Neutral academic portfolio styles */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #cc0000;
+    --light-bg: #f8f9fa;
+    --dark-text: #000000;
+    --light-text: #ffffff;
+    --section-padding: 40px 20px;
+    --soft-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+body { 
+    font-family: 'Times New Roman', Georgia, serif; 
+    margin: 0; 
+    padding: 0; 
+    color: var(--dark-text); 
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    scroll-behavior: smooth;
+    letter-spacing: 0.3px;
+}
+
+/* Elegant animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes softPulse {
+    0% { box-shadow: var(--soft-shadow); }
+    50% { box-shadow: 0 8px 25px rgba(156, 118, 147, 0.15); }
+    100% { box-shadow: var(--soft-shadow); }
+}
+
+section {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Improved typography */
+h1, h2, h3 {
+    font-family: 'Times New Roman', Georgia, serif;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    position: relative;
+    font-weight: 600;
+    color: #000;
+}
+
+h2:after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: var(--accent-color);
+    margin-top: 10px;
+    opacity: 0.7;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+header { 
+    background-color: var(--primary-color); 
+    color: var(--light-text); 
+    padding: 24px 20px; 
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 1.9rem;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    position: relative;
+    display: inline-block;
+    font-family: 'Times New Roman', Georgia, serif;
+}
+
+section { 
+    padding: var(--section-padding);
+    max-width: 900px;
+    margin: 0 auto;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.bio { 
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: var(--soft-shadow);
+    margin: 20px auto;
+    padding: 28px 20px;
+    position: relative;
+    z-index: 10;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Profile layout */
+.bio-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 40px; /* Increased gap between image and text */
+    flex-direction: row; /* Ensure proper flow */
+}
+
+.profile-image {
+    flex: 0 0 120px; /* Reduced from 160px to account for smaller image */
+}
+
+.photo-container {
+    overflow: hidden;
+    width: 80px; /* Reduced size to match smaller image */
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 40px; /* Half of width/height for circle */
+    border: none;
+    box-shadow: none;
+}
+
+.bio-content {
+    flex: 1 1 300px;
+    text-align: justify;
+}
+
+/* Profile image placeholder */
+.profile-photo {
+    width: 80px; /* Reduced to match container */
+    height: 80px;
+    object-fit: cover;
+    object-position: 70% center; /* Shifted right by 20% to fit head better */
+    display: block;
+    pointer-events: none; /* Prevents right-click and drag */
+    user-select: none; /* Prevents selection */
+}
+
+.profile-placeholder {
+    width: 80px; /* Matched to photo size */
+    height: 80px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    display: none; /* Hidden when photo is present */
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.profile-placeholder span {
+    font-size: 2rem; /* Smaller text for smaller placeholder */
+    color: white;
+    font-weight: 500;
+    font-family: 'Segoe UI', 'Georgia', serif;
+    letter-spacing: 1px;
+}
+
+.bio-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: 500;
+}
+
+.bio-link:hover {
+    text-decoration: underline;
+}
+
+.research { 
+    background-color: var(--light-bg);
+    border-radius: 4px;
+    box-shadow: var(--soft-shadow);
+    padding: 35px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Publication and teaching sections */
+.research ul {
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+.research li {
+    margin-bottom: 18px;
+    position: relative;
+    padding-left: 15px;
+    line-height: 1.5;
+}
+
+.research li::before {
+    content: '◦';
+    position: absolute;
+    left: -5px;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+/* Coming soon placeholder styling - only for non-supervision lists */
+.research ul:not(.supervision-list):not(.publications-list) li:first-child {
+    color: #888;
+    font-style: italic;
+    padding-left: 5px;
+}
+
+.research ul:not(.supervision-list):not(.publications-list) li:first-child::before {
+    content: '';
+}
+
+/* Publications styling */
+.publications-list {
+    padding: 0 !important;
+    margin: 0;
+}
+
+.publication-item {
+    margin-bottom: 15px !important;
+    padding: 0 0 15px 0 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.publication-item:last-child {
+    border-bottom: none;
+}
+
+.publication-item::before {
+    display: none !important;
+}
+
+.publication-year {
+    color: #000;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.publication-title {
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+    display: block;
+    color: var(--dark-text);
+    line-height: 1.3;
+}
+
+.publication-authors {
+    font-size: 0.85rem;
+    margin-bottom: 3px;
+    display: block;
+    font-style: italic;
+    color: #333;
+}
+
+.publication-journal {
+    font-size: 0.85rem;
+    margin-bottom: 3px;
+    display: block;
+    color: #000;
+}
+
+.publication-doi {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 3px;
+    transition: color 0.2s ease;
+}
+
+.publication-doi:hover {
+    text-decoration: underline;
+}
+
+/* Teaching section styling */
+.teaching-intro {
+    font-weight: 500;
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.course-list {
+    margin: 15px 0 25px 0;
+}
+
+.course-item {
+    margin-bottom: 10px;
+    color: #000;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.bullet {
+    color: #000;
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* Simple list styling */
+.simple-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.simple-list li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    color: #000 !important;
+    font-style: normal !important;
+}
+
+.simple-list li::before {
+    content: '•' !important;
+    position: absolute !important;
+    left: 0 !important;
+    color: #000 !important;
+    font-size: 1.2rem !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Supervision section styling */
+.subsection-title {
+    font-size: 1.5rem;
+    margin: 40px 0 15px;
+    color: var(--primary-color);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.simple-supervision {
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.supervision-group {
+    margin-bottom: 25px;
+}
+
+.supervision-heading {
+    font-size: 1.05rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: 600;
+}
+
+.simple-supervision ul {
+    list-style-type: disc !important;
+}
+
+.simple-supervision li {
+    display: list-item !important;
+    margin-bottom: 8px;
+}
+
+.supervision-items {
+    margin-left: 20px;
+}
+
+.supervision-item {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.supervision-item:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #000;
+}
+
+.supervision-item a {
+    position: relative;
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-color);
+    color: #000;
+    transition: color 0.2s ease;
+}
+
+.supervision-item a:hover {
+    color: var(--accent-color);
+}
+
+.supervision-item a:after {
+    content: '→';
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.supervision-item a:hover:after {
+    margin-left: 6px;
+    opacity: 1;
+}
+
+.supervision-item a {
+    position: relative;
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-color);
+    color: #000;
+    transition: color 0.2s ease;
+}
+
+.supervision-item a:hover {
+    color: var(--accent-color);
+}
+
+.supervision-item a:after {
+    content: '→';
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.supervision-item a:hover:after {
+    margin-left: 6px;
+    opacity: 1;
+}
+
+.thesis-link {
+    color: #000; /* Black by default */
+    text-decoration: none;
+    position: relative;
+}
+
+.thesis-link:hover {
+    text-decoration: underline;
+    color: #000 !important; /* Stay black on hover */
+}
+
+/* Remove the document icon */
+.thesis-link::after {
+    content: '';
+}
+
+.projects {
+    background-color: white;
+    padding: var(--section-padding);
+}
+
+/* Projects grid layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Style for individual project items */
+.project {
+    border: none;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: var(--light-bg);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project h3 {
+    color: var(--accent-color);
+    margin-top: 0;
+    font-size: 1.4rem;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+}
+
+/* Project icon */
+.project-icon {
+    font-size: 2.5rem;
+    margin: 15px 0;
+    color: var(--primary-color);
+}
+
+/* Project link button */
+.project-link {
+    display: inline-block;
+    margin-top: auto;
+    padding: 8px 16px;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    align-self: flex-start;
+    margin-top: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.project-link:hover {
+    background-color: #2980b9;
+}
+
+footer { 
+    background-color: var(--primary-color); 
+    color: var(--light-text); 
+    text-align: center; 
+    padding: 20px 20px;
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Navigation menu */
+nav {
+    background-color: var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav li a {
+    display: block;
+    color: var(--light-text);
+    text-align: center;
+    padding: 12px 18px;
+    text-decoration: none;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    position: relative;
+    letter-spacing: 0.5px;
+    font-size: 0.95rem;
+}
+
+nav li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+nav li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 10px;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav li a:hover::after {
+    width: 30px;
+}
+
+/* Enhanced responsive design */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav li {
+        width: 100%;
+    }
+    
+    header {
+        padding: 30px 20px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    header h1::before, header h1::after {
+        padding: 0 8px;
+        font-size: 1.2rem;
+    }
+    
+    .bio {
+        margin-top: -10px;
+        padding: 25px;
+    }
+    
+    .research {
+        padding: 25px;
+    }
+    
+    section {
+        padding: 30px 20px;
+    }
+    
+    .bio-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .photo-container {
+        width: 70px; /* Smaller for mobile */
+        height: 70px;
+        border-radius: 35px; /* Full circle */
+        border: none;
+        box-shadow: none;
+        margin: 0 auto 20px auto;
+    }
+    
+    .profile-photo {
+        width: 70px;
+        height: 70px;
+        object-position: 70% center; /* Consistent with desktop */
+    }
+    
+    .profile-placeholder {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+    }
+    
+    .profile-placeholder span {
+        font-size: 1.5rem;
+    }
+    
+    .bio-content h2:after {
+        margin: 10px auto;
+    }
+    
+    footer {
+        padding: 15px 20px;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    h2:after {
+        margin: 8px auto;
+    }
+    
+/*** Removed old teaching-list responsive styling ***/
+    
+    /* Responsive styles for supervision removed as they're no longer needed */
+}
