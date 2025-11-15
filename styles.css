@@ -11,7 +11,7 @@
     --link-hover: #3e5449;
     --typewriter-color: #8b6f5c;
     --bg-color: #f0f4f1;
-    --max-width: 600px;
+    --max-width: 800px;
     --font-family: 'Space Mono', monospace;
 }
 
@@ -106,7 +106,7 @@ nav a.active {
 }
 
 main {
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 }
 
 p {
