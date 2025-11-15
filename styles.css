@@ -43,6 +43,32 @@ body {
     background-color: transparent;
 }
 
+/* Right sidebar */
+.sidebar-right {
+    flex-shrink: 0;
+    width: 150px;
+    position: sticky;
+    top: 60px;
+    height: fit-content;
+}
+
+.links-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 0.9rem;
+}
+
+.links-vertical a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.links-vertical a:hover {
+    color: var(--link-color);
+}
+
 header {
     margin-bottom: 40px;
 }
