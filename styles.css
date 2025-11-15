@@ -96,6 +96,13 @@ nav a.active {
     border-left-color: var(--link-color);
 }
 
+/* Sidebar extra content */
+.sidebar-extra {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
 /* Main content */
 .content {
     flex: 1;

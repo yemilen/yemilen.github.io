@@ -24,6 +24,10 @@
                     <a href="publications.html">publications</a>
                     <a href="blog.html">blog</a>
                 </nav>
+
+                <div class="sidebar-extra">
+                    <span id="drinks-container"><span class="clickable drink-item" data-index="0">some ethiopian coffee (ቡና)</span></span>
+                </div>
             </header>
         </div>
 
@@ -32,10 +36,6 @@
             <h2>About</h2>
 
             <div class="about-content">
-
-            <p class="intro">
-                While you're here, help yourself to <span id="drinks-container"><span class="clickable drink-item" data-index="0">some ethiopian coffee</span></span>.
-            </p>
 
             <p>
                 Hi, my name is Milen. I am a PhD candidate at the University of Amsterdam, in the 
@@ -121,11 +121,11 @@
     <script>
         // Progressive drink reveal
         const drinks = [
-            "some ethiopian coffee",
-            "stroopwafels and tea",
-            "pistachio ice cream",
-            "fika time with kanelbullar",
-            "fresh pretzels"
+            "some ethiopian coffee (ቡና)",
+            "stroopwafels e tè",
+            "gelato",
+            "fika med kanelbullar",
+            "poffertjes"
         ];
         
         let currentDrinkIndex = 0;
@@ -159,7 +159,7 @@
                     } else if (currentDrinkIndex === drinks.length - 1) {
                         // Reset to original when clicking the last item
                         const container = document.getElementById('drinks-container');
-                        container.innerHTML = '<span class="clickable drink-item" data-index="0">some ethiopian coffee</span>';
+                        container.innerHTML = '<span class="clickable drink-item" data-index="0">some ethiopian coffee (ቡና)</span>';
                         currentDrinkIndex = 0;
                         hasCompleted = false;
                     }
