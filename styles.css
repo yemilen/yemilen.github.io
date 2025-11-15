@@ -99,6 +99,9 @@ nav a.active {
 .content {
     flex: 1;
     max-width: var(--max-width);
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
 }
 
 main {
