@@ -1,0 +1,279 @@
+@font-face {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/space-mono-400.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('fonts/space-mono-700.woff2') format('woff2');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --paper: #f5f6f1;
+    --ink: #22302e;
+    --ink-soft: #5d6f69;
+    --green: #3e5d52;
+    --green-deep: #2b4239;
+    --clay: #8b6f5c;
+    --rule: #d5dcd4;
+    --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+    --mono: 'Space Mono', ui-monospace, Menlo, monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink);
+    background-color: var(--paper);
+}
+
+.page {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 48px 40px 36px;
+}
+
+a {
+    color: var(--green);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: var(--green-deep);
+    text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+    outline: 2px solid var(--clay);
+    outline-offset: 3px;
+}
+
+::selection {
+    background: var(--clay);
+    color: #fff;
+}
+
+.masthead {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.masthead h1 {
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+}
+
+.tagline {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    margin-top: 18px;
+}
+
+.portrait img {
+    display: block;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 70% center;
+}
+
+.jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 22px;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+}
+
+.jump a {
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.jump a:hover {
+    color: var(--green);
+    text-decoration: underline;
+}
+
+.jump .gap {
+    flex: 1;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 0 40px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+section > h2 {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: lowercase;
+    letter-spacing: 0.04em;
+    color: var(--clay);
+    padding-top: 6px;
+}
+
+section p {
+    margin-bottom: 12px;
+}
+
+section p:last-child {
+    margin-bottom: 0;
+}
+
+.entry {
+    margin-bottom: 16px;
+}
+
+.entry:last-child {
+    margin-bottom: 0;
+}
+
+.entry h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.entry p {
+    margin-bottom: 0;
+}
+
+.entry .who,
+.entry .where {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-top: 2px;
+}
+
+.entry .who strong {
+    color: var(--ink);
+    font-weight: 700;
+}
+
+.entry .where {
+    font-style: italic;
+}
+
+.entry h3 a {
+    color: var(--ink);
+    text-decoration-color: var(--rule);
+}
+
+.entry h3 a:hover {
+    color: var(--green);
+}
+
+.entry .what {
+    margin: 6px 0 0;
+}
+
+.meta {
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    color: var(--ink-soft);
+    margin-top: 8px;
+}
+
+.status {
+    color: var(--clay);
+    font-weight: 700;
+}
+
+.tag {
+    white-space: nowrap;
+}
+
+.tag::before {
+    content: '#';
+}
+
+.clickable {
+    color: var(--clay);
+    cursor: pointer;
+    border-bottom: 1px dotted var(--clay);
+}
+
+.clickable:hover {
+    color: var(--green-deep);
+    border-bottom-style: solid;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 24px;
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    padding-top: 18px;
+}
+
+@media (max-width: 680px) {
+    body {
+        font-size: 17px;
+    }
+
+    .page {
+        padding: 40px 20px 32px;
+    }
+
+    .masthead {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .portrait img {
+        width: 96px;
+        height: 96px;
+    }
+
+    section {
+        grid-template-columns: 1fr;
+        padding: 30px 0;
+    }
+
+    section > h2 {
+        margin-bottom: 14px;
+        padding-top: 0;
+    }
+
+    .jump .gap {
+        display: none;
+    }
+}
