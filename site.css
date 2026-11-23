@@ -316,3 +316,10 @@ footer {
     border-radius: 4px;
     padding: 14px 16px;
 }
+
+.linknote {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-left: 6px;
+}
