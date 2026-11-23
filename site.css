@@ -277,3 +277,42 @@ footer {
         display: none;
     }
 }
+
+.paper-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+}
+
+.paper-authors strong {
+    font-weight: 700;
+}
+
+.paper-venue {
+    font-style: italic;
+    color: var(--ink-soft);
+}
+
+.linklist {
+    list-style: none;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+}
+
+.linklist li {
+    margin-bottom: 6px;
+}
+
+.bib {
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    background: #eceee8;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 14px 16px;
+}
